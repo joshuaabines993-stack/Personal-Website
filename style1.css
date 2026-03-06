@@ -67,6 +67,7 @@ nav {
 	backdrop-filter: blur(4px) brightness(40%);
 	box-shadow: 0 0 20px #0F172A;
 	transition: 0.3s linear;
+	z-index: 100;
 }
 .dropdown .links a{
 	display: flex;
@@ -138,10 +139,24 @@ section{
 	border-radius: 100%;
 	overflow: hidden;
 	box-shadow: 0 0 50px #22C55E;
+	z-index: -1;
+	animation: floatImage 4s ease-in-out infinite;
 }
 .main-container .image img{
 	width: 100%;
 	height: 100%;
+}
+
+@keyframes floatImage{
+	0%{
+		transform: translateY(0);
+	}
+	50%{
+		transform: translateY(-1rem);
+	}
+	100%{
+		transform: translateY(0);
+	}
 }
 @media (max-width: 884px){
 	.main-container{
