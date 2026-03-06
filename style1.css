@@ -147,6 +147,19 @@ section{
 	height: 100%;
 }
 
+.footer{
+        background: #0F172A;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 50px;
+ }
+.footer-text p{
+        color: white;
+        margin: 0;
+        font-size: 16px;
+        padding: 7px;
+ }
+
 @keyframes floatImage{
 	0%{
 		transform: translateY(0);
