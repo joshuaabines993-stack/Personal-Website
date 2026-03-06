@@ -37,8 +37,7 @@ nav {
 	color: #22C55E;
 	text-shadow: 0 0 10px #22C55E;
 }
-.hamburg, 
-.cancel{
+nav .fa-bars{
 	cursor: pointer;
 	position: absolute;
 	right: 15px;
@@ -46,6 +45,13 @@ nav {
 	color: #3B82F6;
 	display: none;
 	font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+}
+nav #toggler{
+	cursor: pointer;
+	position: absolute;
+	right: 25px;
+	top: 25px;
+	display: none;
 }
 .nav-container .links a{
 	font-size: 1.2rem;
@@ -171,7 +177,7 @@ section{
 		transform: translateY(0);
 	}
 }
-@media (max-width: 884px){
+@media (max-width: 1056px){
 	.main-container{
 		display: flex;
 		flex-direction: column-reverse;
@@ -179,8 +185,40 @@ section{
 	.nav-container .links{
 		display: none;
 	}
-	.hamburg, .cancel{
+	nav .fa-bars{
 		display: block;
+	}
+	.dropdown{
+		position: absolute;
+		top: 0;
+	    transform: translateY(70px);
+	    width: 100%;
+	    height: auto;
+	    backdrop-filter: blur(4px) brightness(40%);
+	    box-shadow: 0 0 20px #0F172A;
+	    transition: 0.3s linear;
+	    z-index: 100;	
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	}
+	.dropdown .links a{
+	    color: #3B82F6;
+	    text-decoration: none;
+	    padding: 15px 0;
+	    justify-content: center;
+	    align-items: center;
+	    display: block;
+	}
+	.dropdown .links a{
+	    justify-content: center;
+	    align-items: center;
+	    text-align: center;
+	    transition: 0.3s linear;
+   }
+    .dropdown .links a:hover{
+	    background-color: #22C55E;
+   }
+	#toggler:checked ~ .dropdown{
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 	}
 	.main-container .content{
 		width: 80%;
