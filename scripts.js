@@ -8,6 +8,36 @@ function cancel(){
 	navbar.style.transform = "translateY(-500px)"
 }
 
+const dropdownLinks = document.querySelectorAll('.dropdown .links a');
+const toggler = document.getElementById('toggler');
+
+dropdownLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        toggler.checked = false; // closes the dropdown
+    });
+});
+
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('nav .links a, .dropdown .links a');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 70; 
+        if (pageYOffset >= sectionTop) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
 const texts = [
 	"BSCS STUDENT",
 	"PROGRAMMER",
