@@ -276,6 +276,14 @@ section{
 	.nav-container .links{
 		display: none;
 	}
+	.social-links {
+		display: flex;
+		justify-content: center;
+		gap: 20px;
+	}
+	.social-links a{
+		font-size: 40%;
+	}        
 	nav .fa-bars{
 		display: block;
 	}
@@ -304,11 +312,11 @@ section{
 	    align-items: center;
 	    text-align: center;
 	    transition: 0.3s linear;
-   }
-    .dropdown .links a:hover{
+        }
+       .dropdown .links a:hover{
 	    background-color: #22C55E;
-   }
-	#toggler:checked ~ .dropdown{
+        }
+ 	#toggler:checked ~ .dropdown{
 		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 	}
 	.main-container .content{
