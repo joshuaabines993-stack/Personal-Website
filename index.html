@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Portfolio</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<link rel="stylesheet" href="style1.css">
@@ -34,7 +34,7 @@
 		   </div>
 		</div>
 	</nav>
-	<section>
+	<section class="home" id="home">
 		<div class="main-container">
 			<div class="content">
 				<h1 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="600"> I'm <span>Joshua Abines</span></h1>
@@ -53,7 +53,7 @@
 		</div>
 	</section>
 
-	<div class="about" id="about">
+	<section class="about" id="about">
 		<div class="about-img">
 			<img src="joshuamartin.jpg">
 		</div>
@@ -67,20 +67,50 @@
       to grow as a learner while contributing positively to the team and the
       organization.</p>
 		</div>
-		</div>
+		</section>
+
+		<section class="skills" id="skills">
+			<h2 class="head">MY <span>SKILLS</span></h2>
+			<div class="skills-container">
+				<div class="skills-box">
+					<i class='bx bx-bulb'></i>
+					<h3>Ui/Ux Design</h3>
+					<p>Understanding of UI/UX design
+          principles and responsive design</p>
+				</div>
+
+				<div class="skills-box">
+					<i class='bx bx-code-alt' ></i>
+					<h3>Web Development</h3>
+					<p>Experienced in web development
+          (HTML, CSS, JavaScript)</p>
+				</div>
+
+				<div class="skills-box">
+					<i class='bx bxl-flutter'></i>
+					<h3>Mobile Application</h3>
+					<p>Knowledge of mobile application
+          development using Flutter Flow.</p>
+				</div>
+
+				<div class="skills-box">
+					 <i class='bx bxs-cog'></i>
+					<h3>System Development</h3>
+					<p>Experienced in System Development</p>
+				</div>
+			</div>
+		</section>
+
+	<footer class="footer">
+  	<div class="footer-text">
+  		<p> Copyright &copy; 2026 by Joshua Abines | All Right Reserved.</p>
+  	</div>
+	</footer>
 
 	<script src="scripts.js"></script>
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init({offset:0});
   </script>
-
-  <footer class="footer">
-  	<div class="footer-text">
-  		<p> Copyright &copy; 2026 by Joshua Abines | All Right Reserved.</p>
-  	</div>
-  	
-  </footer>
-
 </body>
 </html>

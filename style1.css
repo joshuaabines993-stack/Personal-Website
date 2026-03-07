@@ -4,27 +4,28 @@
 	font-family: Arial, Helvetica, sans-serif;
 	box-sizing: border-box;
 }
-
+html{
+	scroll-behavior: smooth;
+}
 body {
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
 	background: #0F172A;
+	flex-direction: column;
+	display: flex;
 }
-
 nav {
 	width: 100%;
 	height: 10vh;
 	position: sticky;
 }
-
 .nav-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+       width: 100%;
+       height: 100%;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
 }
-
 .logo {
 	color: #3B82F6;
 	position: absolute;
@@ -53,9 +54,9 @@ nav #toggler{
 	top: 25px;
 	display: none;
 }
-.links{
+.links {
 	margin-left: auto;
-	margin-right: 10%;
+	margin-right: 15%;
 }
 .nav-container .links a{
 	font-size: 1.2rem;
@@ -97,7 +98,7 @@ nav #toggler{
 }
 section{
 	width: 100%;
-	height: 90vh;
+	min-height: 90vh;
 }
 .main-container{
 	width: 100%;
@@ -137,9 +138,9 @@ section{
 .social-links i{
 	color: #22C55E;
 	margin: 0 15px;
-	margin-bottom: 150px;
 	font-size: 1.8rem;
 	transition: 0.3s linear;
+	margin-bottom: 100px;
 }
 .social-links i:hover{
 	filter: drop-shadow(0 0 10px #22C55E);
@@ -196,22 +197,72 @@ section{
 	width: 100%;
 	height: 100%;
 }
+.skills{
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column; 
+	align-items: center;
+	color: white;
+	padding: 100px 10%;
+}
+.skills h2{
+	font-size: 2.8rem;
+	margin-bottom: 40px;
+	text-align: center;
+}
+.skills h2 span{
+        font-weight: 700;
+        text-shadow: 0 0 10px #22C55E;
+	color: #22C55E;
+}
+.skills-container{
+	display: flex;          
+	justify-content: center;
+	gap: 40px;              
+	flex-wrap: wrap; 
+}
+.skills-box{
+	width: 260px;
+	padding: 25px;
+	text-align: center;
+	border-radius: 20px;
+	box-shadow: 0 0 5px rgba(59,130,246,0.4);
+	transition: all 0.3s ease;
+	flex: 1;
+}
+.skills-box:hover{
+	transform: translateY(-10px) scale(1.03);
+	box-shadow: 0 0 20px rgba(59,130,246,0.8);
+}
+.skills-box h3{
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+}
+.skills-box p{
+	font-size: 1.2rem;
+}
+.skills-box i{
+	font-size: 1.5rem;
+	color: #3B82F6;
+	margin-bottom: 10px;
+}
 .footer{
-        background: #0F172A;
-        text-align: center;
-        padding: 10px 0;
-        margin-top: 50px;
+       background: #0F172A;
+       text-align: center;
+       padding: 10px 0;
+       margin-top: auto;
  }
 .footer-text p{
-        color: white;
-        margin: 0;
-        font-size: 16px;
-        padding: 7px;
+       color: white;
+       margin: 0;
+       font-size: 16px;
+       padding: 7px;
  }
 .show{
 	animation: text-appear both;
 	animation-timeline: view();
-	animation-range: entry 20% cover 100vh;
+	animation-range: entry 10% cover 100vh;
 }
 @keyframes text-appear{
 	from{
@@ -225,13 +276,13 @@ section{
 }
 .about-img{
 	animation: about-img both;
-	animation-timeline: view(40% 20%);
+	animation-timeline: view(20% 10%);
 }
 @keyframes about-img{
 	from{
 	filter: blur(5px);
         opacity: 0;
-        scale: .95;
+        scale: .50;
         translate: 0 4rem;
 	}
 	to{
@@ -245,7 +296,7 @@ section{
 .show-p{
        animation: show-p both;
        animation-timeline: view();
-       animation-range: entry 40% cover 100vh;
+       animation-range: entry 20% cover 100vh;
 }
 @keyframes show-p{
 	from{
@@ -255,6 +306,39 @@ section{
 	to{
 	opacity: 1;
 	transition: translateY(0);
+	}
+}
+.head{
+	animation: head both;
+	animation-timeline: view();
+	animation-range: entry 10% cover 100vh;
+}
+@keyframes head{
+	from{
+        opacity: 0;
+        transform: translateY(100px);
+	}
+	to{
+	opacity: 1;
+	transition: translateY(0);
+	}
+}
+.skills-box{
+	animation: skills-box both;
+	animation-timeline: view();
+	 animation-range: entry 20% cover 100vh;
+}
+@keyframes skills-box{
+	from{
+        opacity: 0;
+        scale: .50;
+        translate: 0 4rem;
+	}
+	to{
+	filter: none;
+	opacity: 1;
+	scale: 1;
+	translate: 0 0;
 	}
 }
 @keyframes floatImage{
@@ -294,13 +378,13 @@ section{
 	.dropdown{
 		position: absolute;
 		top: 0;
-	    transform: translateY(70px);
-	    width: 100%;
-	    height: auto;
-	    backdrop-filter: blur(4px) brightness(40%);
-	    box-shadow: 0 0 20px #0F172A;
-	    transition: 0.3s linear;
-	    z-index: 100;	
+	        transform: translateY(70px);
+	        width: 100%;
+	        height: auto;
+	        backdrop-filter: blur(4px) brightness(40%);
+	        box-shadow: 0 0 20px #0F172A;
+	        transition: 0.3s linear;
+	        z-index: 100;	
 		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 	}
 	.dropdown .links a{
@@ -337,13 +421,13 @@ section{
 		height: 70%;
 	}
 	.main-container .image{
-		width: 60%;
-		height: 70%;
+		width: 40%;
+		height: 25%;
 	}
 }
 @media (max-width: 440px){
 	.main-container .image{
-		width: 70%;
+		width: 50%;
 		height: 40%;
 	}
 	.main-container .content{
