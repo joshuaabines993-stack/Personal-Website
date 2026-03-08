@@ -38,6 +38,26 @@ window.addEventListener('scroll', () => {
     });
 });
 
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.card');
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    const filter = button.getAttribute('data-filter');
+
+    projectCards.forEach(card => {
+      if (filter === 'all' || card.getAttribute('data-type') === filter) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
 const texts = [
 	"BSCS STUDENT",
 	"PROGRAMMER",

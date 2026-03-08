@@ -191,6 +191,7 @@ section{
 	font-size: 1.2rem;
 	margin: 20px 0;
 	text-align: justify;
+	margin-bottom: 25px;
 }
 .about .about-img{
 	width: 350px;
@@ -204,6 +205,105 @@ section{
 	width: 100%;
 	height: 100%;
 	animation: floatImage 4s ease-in-out infinite;
+}
+.download-btn{
+    margin-top: 30px;
+    padding: 12px 28px;
+    background: linear-gradient(45deg,#00ffee,#00b3ff);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+.download-btn i{
+    margin-right: 8px;
+}
+.download-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0,255,238,0.6);
+}
+.education{
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column; 
+	align-items: center;
+	color: white;
+	padding: 100px 10%;
+}
+.education h2{
+	font-size: 2.8rem;
+	margin-bottom: 40px;
+	text-align: center;
+}
+.education h2 span{
+     font-weight: 700;
+     text-shadow: 0 0 10px #22C55E;
+	 color: #22C55E;
+}
+.education-container{
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+}
+.education-box{
+    width: 100%;
+    height: 260px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    color: white;
+    background: #0F172A;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.education-box:hover{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 20px rgba(34,197,94,0.6);
+}
+.education-box h3,
+.education-box p,
+.education-box span{
+    z-index: 1;
+    margin: 5px 10px;
+}
+.education-box h3{
+    font-size: 1.4rem;
+}
+.education-box p{
+    font-size: 1rem;
+}
+.education-box span{
+    font-size: 0.9rem;
+    color: #D1D5DB;
+}
+.education-box::before{
+    content:'';
+    position:absolute;
+    width:120px;
+    height:200%;
+    background-image: linear-gradient(180deg,#3B82F6,#22C55E);
+    animation: rotBGimg 4s linear infinite;
+}
+@keyframes rotBGimg{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+.education-box::after{
+    content:"";
+    position:absolute;
+    inset:5px;
+    border-radius:20px;
+    background: linear-gradient(#3b82f6, #06b6d4, #3b82f6);
 }
 .skills{
 	width: 100%;
@@ -220,8 +320,8 @@ section{
 	text-align: center;
 }
 .skills h2 span{
-        font-weight: 700;
-        text-shadow: 0 0 10px #22C55E;
+     font-weight: 700;
+     text-shadow: 0 0 10px #22C55E;
 	 color: #22C55E;
 }
 .skills-container{
@@ -240,8 +340,25 @@ section{
 	flex: 1;
 }
 .skills-box:hover{
-	transform: translateY(-10px) scale(1.03);
-	box-shadow: 0 0 20px rgba(59,130,246,0.8);
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #22C55E, 0 0 40px #3B82F6, 0 0 60px #22C55E;
+    animation: pulseShadow 1.5s infinite;
+}
+@keyframes pulseShadow{
+    0%{box-shadow:0 0 20px #22C55E,0 0 40px #3B82F6;}
+    50%{box-shadow:0 0 40px #22C55E,0 0 60px #3B82F6;}
+    100%{box-shadow:0 0 20px #22C55E,0 0 40px #3B82F6;}
+}
+.skills-box:hover h3,
+.skills-box:hover p,
+.skills-box:hover i{
+    color:#22C55E;
+    text-shadow: 0 0 2px #22C55E, 0 0 5px #3B82F6, 0 0 10px #22C55E;
+    animation: flicker 1.5s infinite;
+}
+@keyframes flicker{
+    0%,19%,21%,23%,25%,54%,56%,100%{opacity:1;}
+    20%,22%,24%,55%{opacity:0.4;}
 }
 .skills-box h3{
         font-size: 1.5rem;
@@ -270,9 +387,32 @@ section{
 	text-align: center;
 }
 .projects h2 span{
-        font-weight: 700;
-        text-shadow: 0 0 10px #22C55E;
-	 color: #22C55E;
+    font-weight: 700;
+    text-shadow: 0 0 10px #22C55E;
+    color: #22C55E;
+}
+.project-filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+.project-filters .filter-btn {
+    padding: 10px 20px;
+    background: #0f172a;
+    border: 2px solid #3B82F6;
+    color: #3B82F6;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.0rem;
+}
+.project-filters .filter-btn:hover,
+.project-filters .filter-btn.active {
+    background: #22C55E;
+    color: white;
+    border-color: #22C55E;
 }
 .card-container{
 	display: flex;
@@ -294,35 +434,28 @@ section{
 	position: relative;
 	background: #0f172a;
 	color: white;
-
 	transition: transform 0.4s ease, box-shadow 0.4s ease;
 	transform-style: preserve-3d;
 }
-
 .card:hover{
 	transform: rotateX(8deg) rotateY(-8deg) translateY(-10px);
 	box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
-
 .card::before{
 	content: "";
 	position: absolute;
 	inset: -2px;
 	border-radius: 20px;
-
 	background: linear-gradient(
 		90deg,
 		#3b82f6,
 		#06b6d4,
 		#3b82f6
 	);
-
 	background-size: 300% 300%;
 	z-index: -1;
-
 	animation: borderGlow 4s linear infinite;
 }
-
 @keyframes borderGlow{
 	0%{background-position:0% 50%;}
 	50%{background-position:100% 50%;}
@@ -334,14 +467,21 @@ section{
 	margin-bottom: 10px;
 	border-radius: 50%;
 	box-shadow: 0 0 10px rgba(59,130,246,0.4);
+	transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+	cursor: pointer;
+}
+.card img:hover{
+	transform: scale(1.1); 
+	box-shadow: 0 0 20px #3B82F6, 0 0 30px #22C55E; 
+	filter: brightness(1.2); 
 }
 .card h3{
 	font-size: 1.3rem;
 	margin-bottom: 10px;
 }
 .card p{
-       font-size: 1.2rem;
-       text-align: center;
+    font-size: 1.2rem;
+    text-align: center;
 }
 .contact{
     width: 100%;
@@ -386,7 +526,6 @@ section{
     text-align: center;
     overflow: hidden;
     flex: 1;
-
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     z-index: 1;
 }
@@ -527,10 +666,43 @@ section{
 	    transform: translateY(0);
 	}
 }
+.download-btn{
+       animation: download-btn both;
+       animation-timeline: view();
+       animation-range: entry 20% cover 60%;
+}
+@keyframes download-btn{
+	from{
+        opacity: 0;
+        transform: translateY(100px);
+	}
+	to{
+	    opacity: 1;
+	    transform: translateY(0);
+	}
+}
+.education-box{
+	    animation: education-box both;
+	    animation-timeline: view();
+	    animation-range: entry 25% cover 40%;
+}
+@keyframes education-box{
+	from{
+        opacity: 0;
+        scale: .50;
+        translate: 0 4rem;
+	}
+	to{
+	    filter: none;
+	    opacity: 1;
+	    scale: 1;
+     	translate: 0 0;
+    }
+}
 .head{
 	    animation: head both;
 	    animation-timeline: view();
-	    animation-range: entry 5% cover 50%;
+	    animation-range: entry 5% cover 70%;
 }
 @keyframes head{
 	from{
@@ -566,6 +738,24 @@ section{
        animation-range: entry 20% cover 40%;
 }
 @keyframes card{
+	from{
+        opacity: 0;
+        scale: .50;
+        translate: 0 4rem;
+	}
+	to{
+	    filter: none;
+    	opacity: 1;
+    	scale: 1;
+	    translate: 0 0;
+	}
+}
+.project-filters{
+       animation: project-filters;
+       animation-timeline: view();
+       animation-range: entry 10% cover 40%;
+}
+@keyframes project-filters{
 	from{
         opacity: 0;
         scale: .50;
@@ -669,6 +859,11 @@ section{
 	nav {
         position: static; 
       }
+    .download-btn{
+    	display: flex;
+    	align-items: center;
+    	justify-content: center;
+    }
 }
 @media (max-width: 440px){
 	.main-container .image{
