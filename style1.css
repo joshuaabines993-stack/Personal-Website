@@ -203,6 +203,7 @@ section{
 .about .about-img img{
 	width: 100%;
 	height: 100%;
+	animation: floatImage 4s ease-in-out infinite;
 }
 .skills{
 	width: 100%;
@@ -472,13 +473,13 @@ section{
 .footer-text p{
        color: white;
        margin: 0;
-       font-size: 16px;
+       font-size: 20px;
        padding: 7px;
  }
 .show{
 	animation: text-appear both;
 	animation-timeline: view();
-	animation-range: entry 10% cover 100vh;
+	animation-range: entry 60% cover 80%;
 }
 @keyframes text-appear{
 	from{
@@ -486,13 +487,15 @@ section{
         transform: translateY(100px);
 	}
 	to{
-	opacity: 1;
-	transition: translateY(0);
+	    opacity: 1;
+	    transform: translateY(0);
 	}
 }
 .about-img{
 	animation: about-img both;
-	animation-timeline: view(20% 10%);
+	animation-timeline: view();
+	 animation-range: entry 10% cover 25%;
+
 }
 @keyframes about-img{
 	from{
@@ -502,17 +505,17 @@ section{
         translate: 0 4rem;
 	}
 	to{
-	filter: none;
-	opacity: 1;
-	scale: 1;
-	translate: 0 0;
-	animation: floatImage 4s ease-in-out infinite;
+	    filter: none;
+	    opacity: 1;
+	    scale: 1;
+	    translate: 0 0;
+	    animation: floatImage 4s ease-in-out infinite;
 	}
 }
 .show-p{
        animation: show-p both;
        animation-timeline: view();
-       animation-range: entry 20% cover 100vh;
+       animation-range: entry 20% cover 60%;
 }
 @keyframes show-p{
 	from{
@@ -520,14 +523,14 @@ section{
         transform: translateY(100px);
 	}
 	to{
-	opacity: 1;
-	transition: translateY(0);
+	    opacity: 1;
+	    transform: translateY(0);
 	}
 }
 .head{
-	animation: head both;
-	animation-timeline: view();
-	animation-range: entry 10% cover 100vh;
+	    animation: head both;
+	    animation-timeline: view();
+	    animation-range: entry 5% cover 50%;
 }
 @keyframes head{
 	from{
@@ -535,14 +538,14 @@ section{
         transform: translateY(100px);
 	}
 	to{
-	opacity: 1;
-	transition: translateY(0);
+	    opacity: 1;
+	    transform: translateY(0);
 	}
 }
 .skills-box{
-	animation: skills-box both;
-	animation-timeline: view();
-	animation-range: entry 20% cover 100vh;
+	    animation: skills-box both;
+	    animation-timeline: view();
+	    animation-range: entry 25% cover 40%;
 }
 @keyframes skills-box{
 	from{
@@ -551,16 +554,16 @@ section{
         translate: 0 4rem;
 	}
 	to{
-	filter: none;
-	opacity: 1;
-	scale: 1;
-	translate: 0 0;
+	    filter: none;
+	    opacity: 1;
+	    scale: 1;
+     	translate: 0 0;
 	}
 }
 .card{
        animation: card both;
        animation-timeline: view();
-       animation-range: entry 20% cover 100vh;
+       animation-range: entry 20% cover 40%;
 }
 @keyframes card{
 	from{
@@ -569,10 +572,10 @@ section{
         translate: 0 4rem;
 	}
 	to{
-	filter: none;
-	opacity: 1;
-	scale: 1;
-	translate: 0 0;
+	    filter: none;
+    	opacity: 1;
+    	scale: 1;
+	    translate: 0 0;
 	}
 }
 @keyframes floatImage{
@@ -687,7 +690,7 @@ section{
 	}
 	nav {
               position: static; 
-    }
+      }
 }
 ::-webkit-scrollbar{
 	width: 10px;
