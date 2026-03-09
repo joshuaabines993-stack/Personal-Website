@@ -71,8 +71,10 @@
       organization.</p>
           <a href="Joshua-Abines-Resume.pdf" download class="download-btn">
           <i class='bx bx-download'></i> My Resume</a>
+          <a href="Joshua-Abines-Resume.pdf" target="_blank" download class="download-btn">View Resume</a>
 		</div>
 		</section>
+
     <section class="education" id="education">
 	<h2 class="head">MY <span>EDUCATION</span></h2>
 	<div class="education-container">
@@ -178,7 +180,7 @@
 			  </div>
 		</section>
 
-
+		
 		<section class="contact" id="contact">
     <h2>CONTACT <span>ME</span></h2>
     <div class="contact-container">
@@ -198,16 +200,17 @@
                 <h3>Location</h3>
                 <p>Wawang Pulo Valenzuela City, Philippines</p>
             </div>
-        </div>
+         </div>
 
-        <form class="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+        <form id="contact-form" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" id="sendBtn">Send Message</button>
+        <div id="form-status"></div>
         </form>
-    </div>
-</section>
+       </div>
+      </section>
 
 
 		<footer class="footer">
@@ -221,5 +224,13 @@
   <script>
     AOS.init({offset:0});
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+  (function(){
+   emailjs.init("JrQJI92fgSIpcBxcf");
+   })();
+  </script>
+
 </body>
 </html>

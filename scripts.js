@@ -58,6 +58,38 @@ filterButtons.forEach(button => {
   });
 });
 
+const contactForm = document.getElementById("contact-form");
+const statusMessage = document.getElementById("form-status");
+const sendBtn = document.getElementById("sendBtn");
+
+contactForm.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    sendBtn.disabled = true;
+
+    statusMessage.innerHTML = "<span class='spinner'></span> Sending...";
+    statusMessage.className = "sending";
+
+    emailjs.sendForm(
+        "service_zcgig9m",
+        "template_9a2gvzx",
+        this
+    ).then(function(){
+
+        statusMessage.innerHTML = "✓ Message Sent Successfully!";
+        statusMessage.className = "success";
+
+        sendBtn.disabled = false;
+        contactForm.reset();
+
+    }).catch(function(error){
+        statusMessage.innerHTML = "✖ Failed to send message";
+        statusMessage.className = "error";
+
+        sendBtn.disabled = false;
+    });
+});
+
 const texts = [
 	"BSCS STUDENT",
 	"PROGRAMMER",
