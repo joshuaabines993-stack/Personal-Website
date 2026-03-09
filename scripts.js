@@ -58,6 +58,38 @@ filterButtons.forEach(button => {
   });
 });
 
+document.querySelectorAll('.skills-box-wrapper').forEach(wrapper => {
+    wrapper.addEventListener('mouseenter', () => {
+        const fills = wrapper.querySelectorAll('.progress-fill');
+        fills.forEach((fill,index) => {
+            fill.style.width = '0%'; // reset before hover
+            const target = parseInt(fill.getAttribute('data-width'));
+            const percentEl = fill.closest('.progress-bar').previousElementSibling.querySelector('.percentage');
+            percentEl.innerText = '0%';
+            setTimeout(() => {
+                // animate fill
+                fill.style.width = target + '%';
+
+                // animate number
+                let count = 0;
+                const interval = setInterval(() => {
+                    if(count >= target) clearInterval(interval);
+                    else percentEl.innerText = ++count + '%';
+                }, 15); // speed of counting
+            }, index * 300); // sequential
+        });
+    });
+
+    wrapper.addEventListener('mouseleave', () => {
+        const fills = wrapper.querySelectorAll('.progress-fill');
+        fills.forEach(fill => {
+            fill.style.width = '0%';
+            const percentEl = fill.closest('.progress-bar').previousElementSibling.querySelector('.percentage');
+            percentEl.innerText = '0%';
+        });
+    });
+});
+
 const contactForm = document.getElementById("contact-form");
 const statusMessage = document.getElementById("form-status");
 const sendBtn = document.getElementById("sendBtn");
@@ -87,6 +119,18 @@ contactForm.addEventListener("submit", function(e){
         statusMessage.className = "error";
 
         sendBtn.disabled = false;
+    });
+});
+
+document.querySelectorAll('.skill-wrapper').forEach(wrapper => {
+    const span = wrapper.querySelector('.progress-bar span');
+    const width = span.getAttribute('data-width');
+    
+    wrapper.addEventListener('mouseenter', () => {
+        span.style.width = width;
+    });
+    wrapper.addEventListener('mouseleave', () => {
+        span.style.width = '0';
     });
 });
 
